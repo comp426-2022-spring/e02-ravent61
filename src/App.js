@@ -37,11 +37,30 @@ function App() {
     if (clear) setClear(false);
     // These variables correspond to the IDs of the input fields in your HTML form below
     // 1. Create other variables for assignments, exams, and engagement here
-    let currentA00 = document.querySelector("#a00").value;
-    let currentA01 = document.querySelector("#a01").value;
+    let currentA00 = document.querySelector("#a00").value || 0;
+    let currentA01 = document.querySelector("#a01").value || 0;
+    let currentA02 = document.querySelector("#a02").value || 0;
+    let currentA03 = document.querySelector("#a03").value || 0;
+    let currentA04 = document.querySelector("#a04").value || 0;
+    let currentA05 = document.querySelector("#a05").value || 0;
+    let currentMidterm = document.querySelector("#midterm").value || 0;
+    let currentCommits = document.querySelector("#commits").value || 0;
+    let currentFinal = document.querySelector("#final").value || 0;
+    let currentE02 = document.querySelector("#e02").value || 0;
+
     if (currentSum === "") return;
     // 2. This line is where you add the points all together. Add your other variable references here. Make sure that they match what is above and what is below in the HTML form
-    let sum = parseInt(currentA00) + parseInt(currentA01);
+    let sum =
+      parseInt(currentE02) +
+      parseInt(currentFinal) +
+      parseInt(currentCommits) +
+      parseInt(currentMidterm) +
+      parseInt(currentA05) +
+      parseInt(currentA04) +
+      parseInt(currentA03) +
+      parseInt(currentA02) +
+      parseInt(currentA00) +
+      parseInt(currentA01);
     setCurrentSum(sum);
   };
 
@@ -60,6 +79,30 @@ function App() {
         <br />
         <br />
         <input type="text" id="a01" placeholder="a01" />
+        <br />
+        <br />
+        <input type="text" id="a02" placeholder="a02" />
+        <br />
+        <br />
+        <input type="text" id="a03" placeholder="a03" />
+        <br />
+        <br />
+        <input type="text" id="a04" placeholder="a04" />
+        <br />
+        <br />
+        <input type="text" id="a05" placeholder="a05" />
+        <br />
+        <br />
+        <input type="text" id="midterm" placeholder="midterm" />
+        <br />
+        <br />
+        <input type="text" id="commits" placeholder="github commits" />
+        <br />
+        <br />
+        <input type="text" id="final" placeholder="final" />
+        <br />
+        <br />
+        <input type="text" id="e02" placeholder="e02" />
         <br />
         <br />
         <button onClick={Add}>Add</button>
